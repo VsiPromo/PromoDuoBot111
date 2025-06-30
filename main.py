@@ -91,7 +91,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(admin_id, f"⚠️ Запит на виведення")
 
 
-👤 @{update.effective_user.username}
+f"🛑 {update.effective_user.username}"
 ID: {user_id}
 💰 Сума: {row[0]} грн
 📤 Реквізити: {text}")
