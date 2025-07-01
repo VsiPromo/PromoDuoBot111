@@ -94,8 +94,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 f"🛑 {update.effective_user.username}"
 ID: {user_id}
 msg = f"💰 Сума: {row[0]} грн"
-msg = f"📌 Реквізити: {text}"
-        await update.message.reply_text("✅ Заявка на виплату надіслана адміну. Очікуй підтвердження!")
+msg = f"📌 Реквізити: {text}"async def handle_withdraw(...):
+    await update.message.reply_text("✅ Заявка на виплату надіслана адміну. Очікуй підтвердження!")
 
 # === Запуск ===
 async def main():
