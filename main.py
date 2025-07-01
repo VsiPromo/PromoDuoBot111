@@ -53,7 +53,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         cursor.execute("INSERT OR IGNORE INTO users (user_id) VALUES (?)", (user_id,))
 
     await context.bot.send_message(chat_id=user_id, text=f"Привіт, {user.first_name}! Запрошуй друзів та отримуй по 4 грн за кожного!")
-await application.bot.send_message(chat_id=user_id, text=f"Твоє посилання: ...")
+from telegram.ext import ApplicationBuilder
+
+application = ApplicationBuilder().token("...").build()
+
+async def send_link(user_id):
+    await application.bot.send_message(chat_id=user_id, text="Твоє посилання: ...")
 
 # === /balance ===
 async def balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
