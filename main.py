@@ -38,7 +38,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"Привіт, @{username}!")
 
-app = ApplicationBuilder().token("7953437036:AAElxQY8I0B2K-5OIxvwiFwIzIv_5K41AsA").build()
+app = ApplicationBuilder().token("7953437036:AAElxQY8IJ082K-50IvxwiFWzIv_5K41AsA").build()
 app.add_handler(CommandHandler("start", start))
 
 app.run_webhook(
