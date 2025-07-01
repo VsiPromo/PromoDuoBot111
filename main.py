@@ -31,6 +31,18 @@ async def check_subscriptions(user_id, context):
     return True
 
 # === /start ===
+from telegram import Update
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    username = update.effective_user.username
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"Привіт, @{username}!")
+
+app = ApplicationBuilder().token("8184241735:AAFR2l26xI1U_GOh39RCPX5hBtvGnsUAIuQ").build()
+app.add_handler(CommandHandler("start", start))
+
+app.run_polling()
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     user_id = user.id
