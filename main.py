@@ -38,7 +38,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"Привіт, @{username}!")
 
-app = ApplicationBuilder().token("8184241735:AAFR2l26xI1U_GOh39RCPX5hBtvGnsUAIuQ").build()
+app = ApplicationBuilder().token("7953437036:AAElxQY8IJ082K-50IvxwiFWzIv_5K41AsA").build()
 app.add_handler(CommandHandler("start", start))
 
 app.run_polling()
