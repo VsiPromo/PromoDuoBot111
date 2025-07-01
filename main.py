@@ -36,9 +36,23 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"Привіт, @{username}!")
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=f"Привіт, @{username}!"
+    )
+
+app = ApplicationBuilder().token("from telegram import Update
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    username = update.effective_user.username
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=f"Привіт, @{username}!"
+    )
 
 app = ApplicationBuilder().token("7953437036:AAElxQY8IJ082K-50IvxwiFWzIv_5K41AsA").build()
+
 app.add_handler(CommandHandler("start", start))
 
 app.run_webhook(
@@ -46,6 +60,16 @@ app.run_webhook(
     port=10000,
     webhook_url="https://promoduobot111-2.onrender.com"
 )
+").build()
+
+app.add_handler(CommandHandler("start", start))
+
+app.run_webhook(
+    listen="0.0.0.0",
+    port=10000,
+    webhook_url="https://promoduobot111-2.onrender.com"
+)
+
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
